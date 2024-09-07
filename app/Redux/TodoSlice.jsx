@@ -38,8 +38,13 @@ const TodoSlice = createSlice({
       saveToLocalStorage(newState);
       return newState;
     },
+    Clear: (state) => {
+      const newState = []; // Reset state to an empty array
+      saveToLocalStorage(newState); // Clear local storage
+      return newState;
+    },
   },
 });
 
-export const { Add, Remove } = TodoSlice.actions;
+export const { Add, Remove, Clear } = TodoSlice.actions;
 export default TodoSlice.reducer;
